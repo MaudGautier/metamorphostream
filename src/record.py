@@ -29,6 +29,10 @@ class Record:
     def value_size(self) -> int or None:
         return len(self.value) if self.value is not None else -1
 
+    @property
+    def size(self) -> int:
+        return len(self.serialize())
+
     def serialize(self) -> bytes:
         serialized_key_size = struct.pack("i", self.key_size)
         serialized_value_size = struct.pack("i", self.value_size)

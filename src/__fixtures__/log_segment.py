@@ -1,9 +1,8 @@
 import pytest
 
+from src.__fixtures__.constants import TEST_DIRECTORY
 from src.log_segment import LogSegment
 from src.records_file import RecordsFile
-
-TEST_DIRECTORY = "./test_directory"
 
 
 @pytest.fixture

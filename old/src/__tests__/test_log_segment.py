@@ -1,4 +1,4 @@
-from src.record import Record
+from old.src.record import Record
 
 
 def test_can_append_to_empty_log_segment(empty_log_segment):

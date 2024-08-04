@@ -1,5 +1,5 @@
-from src.record import Record
-from src.records_file import RecordsFile
+from old.src.record import Record
+from old.src.records_file import RecordsFile
 
 
 class LogSegment:

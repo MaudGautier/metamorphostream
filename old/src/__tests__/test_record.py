@@ -1,4 +1,4 @@
-from src.record import Record
+from old.src.record import Record
 
 
 def test_deserialize_record():

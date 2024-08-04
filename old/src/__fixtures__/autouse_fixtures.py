@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from src.__fixtures__.constants import TEST_DIRECTORY
+from old.src.__fixtures__.constants import TEST_DIRECTORY
 
 
 def cleanup_files():

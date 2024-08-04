@@ -1,8 +1,8 @@
 import pytest
 
-from src.__fixtures__.constants import TEST_DIRECTORY
-from src.log_segment import LogSegment
-from src.records_file import RecordsFile
+from old.src.__fixtures__.constants import TEST_DIRECTORY
+from old.src.log_segment import LogSegment
+from old.src.records_file import RecordsFile
 
 
 @pytest.fixture

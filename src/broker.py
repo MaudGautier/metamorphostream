@@ -1,5 +1,6 @@
 import pickle
 import socket
+from io import BytesIO
 
 from src.id_generator import BrokerIdGenerator
 
@@ -28,5 +29,13 @@ class Broker:
                 with conn:
                     print(f"Connected by {addr}")
                     data = conn.recv(1024)
-                    message = pickle.loads(data)
-                    print(f"Received message on {self.host}:{self.port} (Broker {self.ID}): {message}")
+
+                    byte_stream = BytesIO(data)
+                    while True:
+                        try:
+                            # Each call to pickle.load() reads one object from the stream
+                            message = pickle.load(byte_stream)
+                            print(f"Received message on {self.host}:{self.port} (Broker {self.ID}): {message}")
+                        except EOFError:
+                            # No more objects in the stream
+                            break

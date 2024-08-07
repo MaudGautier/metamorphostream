@@ -12,7 +12,7 @@ class Broker:
     def __init__(self, host: Host, port: Port):
         self.host = host
         self.port = port
-        self.ID = BrokerIdGenerator(0)
+        self.ID = next(BrokerIdGenerator(0))
 
     def start(self):
         """
